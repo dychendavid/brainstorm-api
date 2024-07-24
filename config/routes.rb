@@ -11,6 +11,14 @@ Rails.application.routes.draw do
   scope :api do
     scope :v1 do
       post "authorize", to: "authentication#guest_authorize"
+
+      scope :products do
+        get "available", to: "product#available"
+        post "intro_gpt/:id", to: "product#intro_gpt"
+        post "/", to: "product#create"
+        get "/:id", to: "product#show"
+        put "/:id", to: "product#update"
+      end
     end
   end
 end

@@ -1,0 +1,2 @@
+class OpenaiLog < ApplicationRecord
+end
