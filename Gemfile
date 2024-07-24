@@ -73,3 +73,5 @@ gem "jwt", "~> 2.8"
 gem "chatgpt-ruby", "~> 2.0"
 
 gem "dotenv-rails", "~> 3.1"
+
+gem "rack-cors", "~> 2.0"
