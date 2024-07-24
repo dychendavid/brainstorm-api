@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  # Rabbit MQ Task Queue
+  rabbit:
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+
+  # Redis
+  redis:
+    image: "redis:6.2"
+    ports:
+      - "6379:6379"
+    labels:
+      NAME: "redis"
+
+  # PostgreSQL
+  postgres:
+    image: "postgres:14"
+    command: postgres -c 'max_connections=200' -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c pg_stat_statements.max=10000
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    labels:
+      NAME: "pg"
+    volumes:
+      - postgresql-data:/var/lib/postgresql-14/data
+
+# Persistent Data Volumes
+volumes:
+  postgresql-data:
