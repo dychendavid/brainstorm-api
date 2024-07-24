@@ -7,4 +7,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
+
+  scope :api do
+    scope :v1 do
+      post "authorize", to: "authentication#guest_authorize"
+    end
+  end
 end
