@@ -39,13 +39,13 @@ Current scenario is the tool will help artist to generate a better product intro
 - Launch web server, in case you'll use port 3000 for frontend part
   - `rails s-p 3001`
 
-## API Document
+# API Document
 
 ### Authorization API
 
 #### **POST** `#{domain}/api/v1/authorize`
 
-- For get `Bearer Token`
+- For get `Bearer Token`, it's valid for 24H
 
 ---
 
