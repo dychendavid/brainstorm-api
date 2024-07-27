@@ -34,7 +34,7 @@ Current scenario is the tool will help artist to generate a better product intro
   - `rails db:migrate`
 - DB seeding
   - `rails db:seed`
-- create .env and setup OPENAI_KEY, replace XXX to your open ai key
+- Create .env and setup OPENAI_KEY, replace XXX to your open ai key
   - `echo "OPENAI_KEY=xxx" >> .env`
 - Launch web server, in case you'll use port 3000 for frontend part
   - `rails s-p 3001`
