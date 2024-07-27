@@ -15,7 +15,6 @@ Rails.application.routes.draw do
       scope :products do
         get "available", to: "product#available"
         post "intro_gpt/:id", to: "product#intro_gpt"
-        post "/", to: "product#create"
         get "/:id", to: "product#show"
         put "/:id", to: "product#update"
       end
